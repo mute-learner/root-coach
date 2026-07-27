@@ -17,8 +17,8 @@ description: 英语词根词缀教学笔记生成流水线。当用户给出一�
 1. **接收输入**：用户给出词根或单词。给单词则先确认词根；词根有歧义则先确认义项（规则见 vocab-coach.md 输入契约）。
 2. **第一阶段（搜索筛选）**：读取 `references/vocab-coach.md`，按其「第一阶段」执行。用当前环境可用的网页搜索工具查 Etymonline / Wiktionary。输出衍生词筛选表 + 覆盖范围说明，**停下等用户勾选**。
 3. **第二阶段（教练笔记）**：用户勾选后，按模板「第二阶段」生成完整笔记。
-4. **存盘**：写入 `C:\Users\13714\Desktop\英语\wiki\` 目录，文件名 `[词根]-词汇教练.md`（如 `dis-词汇教练.md`）。写前若同名文件已存在，先告知用户再覆盖。
-5. **史官延伸**：笔记完成后问一句「要不要生成词源史官历史叙事？」。用户同意才读取 `references/etym-historian.md` 生成，存为 `[词根]-词源史官.md`。用户拒绝则结束。
+4. **存盘**：写入 `C:\Users\13714\Desktop\英语词根词缀\wiki\` 目录（git 仓库，远程 origin = github.com/mute-learner/root-and-affix-），文件名 `[词根]-词汇教练.md`（如 `dis-词汇教练.md`）。写前若同名文件已存在，先告知用户再覆盖。写完在该仓库执行 `git add + commit + push` 同步到 GitHub，commit message 如 `add dis-词汇教练笔记`；push 失败则告知用户、保留本地提交。
+5. **史官延伸**：笔记完成后问一句「要不要生成词源史官历史叙事？」。用户同意才读取 `references/etym-historian.md` 生成，存为同目录下 `[词根]-词源史官.md`，同样 commit + push。用户拒绝则结束。
 
 ## 关键约束
 
